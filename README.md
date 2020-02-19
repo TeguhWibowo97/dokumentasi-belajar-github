@@ -13,4 +13,5 @@ Cara upload file ke github :
 
 
 - rm -rf .git // untuk hapus temporary di folder kita yg terhubung ke github
+- git rm -f namafile //utk menghapus file
 
