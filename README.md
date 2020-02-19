@@ -1,5 +1,3 @@
-# template-mydaily
-template utama aplikasi mydaily
 
 Cara upload file ke github :
 - klik kanan folder yg akan di upload
