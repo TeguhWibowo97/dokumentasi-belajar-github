@@ -1,0 +1,32 @@
+Framework laravel tutorial :
+## Buat new Project laravel
+  -> composer create-project --prefer-dist laravel/laravel NamaProject
+  
+1. Buat Model
+  -> php artisan make:model NamaModel
+
+2. Buat Controller
+  -> php artisan make:controller NamaController
+  -> php artisan make:controller NamaController -r (yg ini versi lengkap)
+  
+3. Buat Migration
+  -> php artisan make:migration create_mahasiswa_table
+  -> php artisan migrate (cara menerapkan migrasi ke database)
+  -> lakukan hal ini agar tidak eror
+            $table->String('tanggal',20);
+            $table->String('keterangan',255);
+            $table->String('dokumen',100);
+            
+  -> melakukan rollback atau membatalkan migration
+      - php artisan migrate:rollback
+      - php artisan migrate:rollback --step=5
+      - php artisan migrate:reset
+
+4. cara insert to database :
+  -> Route::get('/student/create','StudentController@index');
+  -> create index.php di folder views
+  -> buat controller dan model
+
+
+
+
