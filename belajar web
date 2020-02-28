@@ -4,6 +4,8 @@ Framework laravel tutorial :
   
 1. Buat Model
   -> php artisan make:model NamaModel
+  -> pada bagian Model 
+      - protected $tabel = ['student']; // agar bisa akses tabel student       
 
 2. Buat Controller
   -> php artisan make:controller NamaController
@@ -21,8 +23,25 @@ Framework laravel tutorial :
       - php artisan migrate:rollback
       - php artisan migrate:rollback --step=5
       - php artisan migrate:reset
+ 
+4. sintak dasar dan fungsi pada laravel
+  -> @yield('title') // untuk membuat data dinamis pada layout utama
+  -> @section('title','Form Login') // Mengisikan title dengan isi Form login
+ 
+5. LOOPING
+  -> @foreach($student as $std )
+        {{ $std->nisn }}
+        {{ $std->nama }}
+        {{ $std->alamat }}
+     @endforeach
 
-4. cara insert to database :
+6. Menampilkan data 
+  -> Route::get('/student','StudentController@index')
+  -> pada controller
+      $student = Student::all(); // mengambil semua data yang ada pada tabel student
+      return view('student.tampil',['student'=>$student]); // mengirim data kedalam folder student dan file tampil.blade.php
+      
+. cara insert to database :
   -> Route::get('/student/create','StudentController@index');
   -> create index.php di folder views
   -> buat controller dan model
