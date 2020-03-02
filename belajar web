@@ -41,6 +41,16 @@ Framework laravel tutorial :
       $student = Student::all(); // mengambil semua data yang ada pada tabel student
       return view('student.tampil',['student'=>$student]); // mengirim data kedalam folder student dan file tampil.blade.php
       
+      -==== Menggunakan where ====-
+      -> pada controller
+        $student = Student::where('jeniskelamin','perempuan')->get(); // hanya akan menampilkan data yang jeniskelaminnya perempuan
+        return view('student.tampil',['student'=>$student]);
+        
+      -==== Menggunakan 2 where ====-
+      -> Pada Controller
+        $student = Student::where('nama','teguh')->orWhere('matkul','matematika')->get(); // hanya menampilkan semua data dengan nama teguh atau matematika
+        return view('student.tampil',['student'=>$student]);
+        
 . cara insert to database :
   -> Route::get('/student/create','StudentController@index');
   -> create index.php di folder views
