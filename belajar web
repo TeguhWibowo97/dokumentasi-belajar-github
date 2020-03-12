@@ -51,10 +51,19 @@ Framework laravel tutorial :
         $student = Student::where('nama','teguh')->orWhere('matkul','matematika')->get(); // hanya menampilkan semua data dengan nama teguh atau matematika
         return view('student.tampil',['student'=>$student]);
         
-. cara insert to database :
+7. cara insert to database :
   -> Route::get('/student/create','StudentController@index');
   -> create index.php di folder views
   -> buat controller dan model
+  -> pada Model gunakan kode berikut :
+      - protected $table = "siswa"; // maka akan menampilkan file yg ada pada table siswa
+        jika tidak menggunakan kode tersebut maka laravel akan otomatis mencari table dengan nama siswas
+      - Protected $fillable = ['nama','alamat'];
+        jika menggunakan kode tersebut maka hanya kolom nama dan alamat saja yg akan terisi
+  -> Lalu pada CONTROLLER pada function create :
+      - paling atas ketik kode berikut use\App\namaModel;
+      - kemudian Msiswa::create($request->all());
+      - return view('siswa.index');
 
 
 
