@@ -65,6 +65,30 @@ Framework laravel tutorial :
       - kemudian Msiswa::create($request->all());
       - return view('siswa.index');
 
-
+8. Cara Hapus data pada table 
+   -> buat route pada web Route::post('/siswa/hapus/{siswa}','SiswaController@hapus');
+   -> pada controller tambahkan function 
+      hapus(){
+        Msiswa::destroy($id);
+      }
+      return redirect('/dashboard');
+   -> Jika ingin menggunakan localhost says maka gunakan kode berikut:
+      <a href="/siswa/hapus/{{$siswa->id}}" onclick="javascript:return confirm('apakah yakin akan menghapus data ?')">
+        <button class="btn btn-danger">Hapus</button>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
 
