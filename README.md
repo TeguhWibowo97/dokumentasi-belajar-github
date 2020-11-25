@@ -20,4 +20,8 @@ Cara Cloning Project LARAVEL
 - git init
 - git remote add origin https://link
 - git pull origin master
-- 
+- Pada halaman htdocs buka folder project tersebut di cmd
+- ketik ( copy .env.example .env)
+- php artisan key:generate
+- php artisan migrate
+- php artisan serve
