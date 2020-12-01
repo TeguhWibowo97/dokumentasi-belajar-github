@@ -23,6 +23,10 @@ Framework laravel tutorial :
       - php artisan migrate:rollback
       - php artisan migrate:rollback --step=5
       - php artisan migrate:reset
+  -> pada widows biasa nya proses migrasi terjadi kendala solusi nya adalah
+      - buka folder app, lalu buka file AppServiceProvider.php kemudian pada public function boot()
+      - Schema::defaultStringLength(191);
+      - dibagian atas tambahkan kode use Illuminate\Support\Facades\Schema;
  
 4. sintak dasar dan fungsi pada laravel
   -> @yield('title') // untuk membuat data dinamis pada layout utama
@@ -55,6 +59,7 @@ Framework laravel tutorial :
   -> Route::get('/student/create','StudentController@index');
   -> create index.php di folder views
   -> buat controller dan model
+  -> pada controller public function tambahData(Request $request){}
   -> pada Model gunakan kode berikut :
       - protected $table = "siswa"; // maka akan menampilkan file yg ada pada table siswa
         jika tidak menggunakan kode tersebut maka laravel akan otomatis mencari table dengan nama siswas
@@ -75,6 +80,8 @@ Framework laravel tutorial :
    -> Jika ingin menggunakan localhost says maka gunakan kode berikut:
       <a href="/siswa/hapus/{{$siswa->id}}" onclick="javascript:return confirm('apakah yakin akan menghapus data ?')">
         <button class="btn btn-danger">Hapus</button>
+        
+
    
    
    
