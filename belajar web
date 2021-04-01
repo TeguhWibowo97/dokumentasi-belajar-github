@@ -87,7 +87,8 @@ Framework laravel tutorial :
   - php artisan cache:clear
   - php artisan config:clear
    
-   
+10. Membuat hidden request pada form POST
+  - <input name="id_sponsor" type="hidden" value="{{$id}}">
    
    
    
