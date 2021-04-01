@@ -91,7 +91,15 @@ Framework laravel tutorial :
   - <input name="id_sponsor" type="hidden" value="{{$id}}">
    
    
-   
+11. Membuat string random digit
+        $token = "";
+        $codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        $codeAlphabet.= "0123456789";
+
+        for($i=0;$i<8;$i++){
+            $token .= $codeAlphabet[mt_rand(0,strlen($codeAlphabet)-1)];
+        }
+        return $token;
    
    
    
