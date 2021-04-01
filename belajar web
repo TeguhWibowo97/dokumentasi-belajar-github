@@ -83,7 +83,9 @@ Framework laravel tutorial :
         
 
    
-   
+9. Clear cache ( Supaya memperbaiki data yg tidak terload)
+  - php artisan cache:clear
+  - php artisan config:clear
    
    
    
