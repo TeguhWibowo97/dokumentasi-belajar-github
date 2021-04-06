@@ -101,6 +101,22 @@ Framework laravel tutorial :
         }
         return $token;
    
+12. Membuat form validasi
+    - pada controller isikan code berikut
+      $validated = $request->validate([
+              'nama' => 'required|min:3|max:30',
+              'email' => 'required|email',
+          ],[
+              'nama.required' => 'Inputan Nama tidak boleh kosong',
+              'nama.min' => 'Inputan tidak boleh kurang dari 3 huruf',
+              'nama.max' => 'Inputan tidak boleh lebih dari 30 huruf',
+              'email.required' => 'Inputan email tidak boleh kosong',
+          ]);
+    - pada halaman depan isi code berikut
+      <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{old('nama')}}" placeholder="Nama Lengkap" >
+      @error('nama')
+      <div class="form-text text-danger small">{{ $message }}</div>
+      @enderror
    
    
    
