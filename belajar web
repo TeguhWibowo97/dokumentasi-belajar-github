@@ -119,8 +119,9 @@ Framework laravel tutorial :
       @enderror
    
    
-   
-   
+13. Mengambil hanya tanggal dan waktu pada created_at
+    - hanya mengambil tanggal {{ $data['created_at']->format('d/m/Y') }}
+    - hanya mengambil jam {{ $data['created_at']->format('H:i') }}
    
    
    
