@@ -123,7 +123,7 @@ Framework laravel tutorial :
     - hanya mengambil tanggal {{ $data['created_at']->format('d/m/Y') }}
     - hanya mengambil jam {{ $data['created_at']->format('H:i') }}
    
-14. Membuat flashdata
+14. Membuat flashdata atau alert notifikasi
     - pada controller berikan code berikut: return redirect('/login')->with('status','Username atau Password salah !!!');
     - pada view berikan code berikut: 
       @if ($message = Session::get('status'))
@@ -132,6 +132,20 @@ Framework laravel tutorial :
             <strong>{{ $message }}</strong>
         </div>
       @endif
-   
+
+15. Membuat upload image
+    - pada form berikan code berikut <form action="{{url('')}}" method="POST" enctype="multipart/form-data">
+    - buatlah sebuah function :
+      public function upadate(Request $request)
+      {
+        // cek kondisi apakah ada file yg di upload
+        if($request->hasFile('foto_ktp')){
+            $ktp = $request->file('foto_ktp')->getClientOriginalName(); //mengambil nama original foto
+            $ktp = date('Y-m-d_His').$ktp; //memberi nama pada file foto
+            $request->file('foto_ktp')->move(public_path().'/img/ktp', $ktp); memindahkan file foto kedalam folder public/img/ktp
+        }
+        // untuk remove foto 
+        unlink(public_path('img/ktp'.'/'.$data->foto_ktp));
+      }
 
 
