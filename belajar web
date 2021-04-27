@@ -54,6 +54,7 @@ Framework laravel tutorial :
       -> Pada Controller
         $student = Student::where('nama','teguh')->orWhere('matkul','matematika')->get(); // hanya menampilkan semua data dengan nama teguh atau matematika
         return view('student.tampil',['student'=>$student]);
+        return view('student.tampil',compact('student')); // untuk mengirim variabel ke view,, berlaku jika nama nya sama
         
 7. cara insert to database :
   -> Route::get('/student/create','StudentController@index');
