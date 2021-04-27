@@ -134,6 +134,9 @@ Framework laravel tutorial :
       @endif
 
 15. Membuat upload image
+    Paling atas tambahkan
+    use File;
+    
     - pada form berikan code berikut <form action="{{url('')}}" method="POST" enctype="multipart/form-data">
     - buatlah sebuah function :
       public function upadate(Request $request)
