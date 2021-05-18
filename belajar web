@@ -10,6 +10,7 @@ Framework laravel tutorial :
 2. Buat Controller
   -> php artisan make:controller NamaController
   -> php artisan make:controller NamaController -r (yg ini versi lengkap)
+  -> jika membuat controller dlm sebuah folder maka php artisan make:controller pathName/controllerName
   
 3. Buat Migration
   -> php artisan make:migration create_mahasiswa_table
@@ -161,4 +162,5 @@ Framework laravel tutorial :
     - $user->password = bcrypt('rahasia')
     - $user->remember_token = bcrypt('rahasia')
     - $user->save()
+
 
