@@ -152,4 +152,13 @@ Framework laravel tutorial :
         unlink(public_path('img/ktp'.'/'.$data->foto_ktp));
       }
 
+16. Insert data menggunkan artisan tinker
+    - bka terminal ketik php artisan tinker
+    - setelah itu
+    - $user = new \App\Models\User;
+    - $user->name = "teguh wibowo"
+    - $user->email = "teguh@gmail.com"
+    - $user->password = bcrypt('rahasia')
+    - $user->remember_token = bcrypt('rahasia')
+    - $user->save()
 
