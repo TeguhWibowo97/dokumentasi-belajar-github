@@ -163,4 +163,12 @@ Framework laravel tutorial :
     - $user->remember_token = bcrypt('rahasia')
     - $user->save()
 
+17. cara bikin load view / menampilkan newtab pdf sebelum di download
+    $filename = $berkas->berkas_turnitin;
+    $path = storage_path('app/public/ujianproposal/'.$filename);
+
+    return Response::make(file_get_contents($path), 200, [
+        'Content-Type' => 'application/pdf',
+        'Content-Disposition' => 'inline; filename="'.$filename.'"'
+    ]);
 
