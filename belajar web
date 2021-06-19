@@ -172,3 +172,6 @@ Framework laravel tutorial :
         'Content-Disposition' => 'inline; filename="'.$filename.'"'
     ]);
 
+18. Cara download file pada storage
+    - pada view
+      <td><a href="{{Storage::url('public/ujianproposal/'.$d->berkas_turnitin)}}" target="_blank"><i class="fa fa-download"></i></a></td>
