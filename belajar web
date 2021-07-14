@@ -175,3 +175,30 @@ Framework laravel tutorial :
 18. Cara download file pada storage
     - pada view
       <td><a href="{{Storage::url('public/ujianproposal/'.$d->berkas_turnitin)}}" target="_blank"><i class="fa fa-download"></i></a></td>
+      
+19. Cara membuat kolom baru pada tabel
+    - php artisan make:migration add_status_to_ujian_table --table=ujian
+    - public function up()
+      {
+        Schema::table('ujian', function (Blueprint $table) {
+            $table->enum('status',['0','1','2'])->default('0');
+        });
+      }
+    - public function down()
+      {
+        Schema::table('ujian', function (Blueprint $table) {
+            $table->dropColumn('status');
+        });
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
